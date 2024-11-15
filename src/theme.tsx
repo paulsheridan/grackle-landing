@@ -1,24 +1,24 @@
-// import { extendTheme } from "@chakra-ui/react";
+import { extendTheme } from "@chakra-ui/react";
 import "@fontsource/raleway/400.css";
 import { switchAnatomy } from "@chakra-ui/anatomy";
-// import { createMultiStyleConfigHelpers } from "@chakra-ui/react";
+import { createMultiStyleConfigHelpers } from "@chakra-ui/react";
 
-// const { definePartsStyle, defineMultiStyleConfig } =
-//   createMultiStyleConfigHelpers(switchAnatomy.keys);
+const { definePartsStyle, defineMultiStyleConfig } =
+  createMultiStyleConfigHelpers(switchAnatomy.keys);
 
-// const baseStyle = definePartsStyle({
-//   thumb: {
-//     bg: "gray.100",
-//   },
-//   track: {
-//     bg: "gray.300",
-//     _checked: {
-//       bg: "ui.main",
-//     },
-//   },
-// });
+const baseStyle = definePartsStyle({
+  thumb: {
+    bg: "gray.100",
+  },
+  track: {
+    bg: "gray.300",
+    _checked: {
+      bg: "ui.main",
+    },
+  },
+});
 
-// const switchTheme = defineMultiStyleConfig({ baseStyle });
+const switchTheme = defineMultiStyleConfig({ baseStyle });
 
 const disabledStyles = {
   _disabled: {
@@ -26,7 +26,7 @@ const disabledStyles = {
   },
 };
 
-const theme = {
+const theme = extendTheme({
   fonts: {
     body: `'Raleway', sans-serif`,
     heading: `'Raleway', sans-serif`,
@@ -119,7 +119,24 @@ const theme = {
         },
       },
     },
+    // td: {
+    //   paddingTop: "12px",
+    //   paddingRight: "15px",
+    //   textAlign: "left",
+    //   borderBottomWidth: "1px",
+    //   borderBottomStyle: "solid",
+    //   borderBottomColor: "#E1E1E1",
+    // },
+    // th: {
+    //   paddingTop: "12px",
+    //   paddingRight: "15px",
+    //   textAlign: "left",
+    //   borderBottomWidth: "1px",
+    //   borderBottomStyle: "solid",
+    //   borderBottomColor: "#E1E1E1",
+    // },
+    Switch: switchTheme,
   },
-};
+});
 
 export default theme;
